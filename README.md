@@ -34,6 +34,16 @@ It makes sure not to override local changes and goes back to the previous checke
 npm i @beuluis/repository-runner
 ```
 
+## Usage
+
+1. Create a node project. You can sue TypeScript if you wish.
+
+2. Define a main bin
+
+3. Call the [runner helper function](#runner-helper-function) and start configure your setup
+
+4. You can package your project and run it via `npx`or you can just run the bin locally
+
 ## Functions
 
 ### Runner helper function
