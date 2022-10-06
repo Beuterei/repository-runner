@@ -6,7 +6,8 @@
   "bin": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "templates"
   ],
   "publishConfig": {
     "access": "public"
@@ -41,7 +42,6 @@
     "lint": "eslint .",
     "format": "prettier . --check",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "start": "ts-node src/index.ts",
     "prepare": "husky install",
     "prepack": "npm run build",
     "build": "tsc --build"

@@ -13,7 +13,7 @@ export class MarkdownReporter implements Reporter {
     public async report(repositoryReports: RepositoryReport[]): Promise<void> {
         // Use liquid to handle all the templating
         const engine = new Liquid({
-            root: resolve(__dirname, 'templates', 'markdown', 'views'),
+            root: resolve(__dirname, '..', '..', 'templates', 'markdown', 'views'),
             extname: '.liquid',
             jsTruthy: true,
         });

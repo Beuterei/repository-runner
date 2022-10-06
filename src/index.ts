@@ -66,3 +66,7 @@ export const runner = async (config: RunnerConfig) => {
         },
     ]).run();
 };
+
+export { buildInTasks } from './tasks';
+
+export { buildInReporters } from './reporters';
