@@ -36,7 +36,7 @@ npm i @beuluis/repository-runner
 
 ## Usage
 
-1. Create a node project. You can sue TypeScript if you wish.
+1. Create a node project. You can use TypeScript if you wish.
 
 2. Define a main bin
 
@@ -231,7 +231,7 @@ After all reports are collected they get passed to the configured [reporters](#R
 
 -   [ ] rework report system
 
--   [ ] rework runner structure. I really had a hard time to structure this and i am not totally happy. My first goal now was to provide a MVP and learn from using it.
+-   [ ] rework runner structure. I really had a hard time to structure this and I am not totally happy. My first goal now was to provide a MVP and learn from using it.
 
 <!-- CONTRIBUTING -->
 

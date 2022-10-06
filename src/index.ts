@@ -70,3 +70,5 @@ export const runner = async (config: RunnerConfig) => {
 export { buildInTasks } from './tasks';
 
 export { buildInReporters } from './reporters';
+
+export * from './shared/repositoryRunner';

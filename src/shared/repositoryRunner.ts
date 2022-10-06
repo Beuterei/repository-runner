@@ -1,4 +1,4 @@
-import type { NonEmptyArray } from './util';
+export type NonEmptyArray<T> = [T, ...T[]];
 
 export interface Reporter {
     /**
