@@ -6,8 +6,11 @@ import type { Reporter, RepositoryReport } from '../shared/repositoryRunner';
 export class MarkdownReporter implements Reporter {
     private readonly outputDirectory: string;
 
-    public constructor(outputDirectory: string) {
+    private readonly filename: string;
+
+    public constructor(outputDirectory: string, filename = 'report') {
         this.outputDirectory = outputDirectory;
+        this.filename = filename;
     }
 
     public async report(repositoryReports: RepositoryReport[]): Promise<void> {
@@ -21,6 +24,6 @@ export class MarkdownReporter implements Reporter {
         const fileContent = await engine.renderFile('report', { repositoryReports });
 
         // Write the resulting file
-        await writeFile(resolve(this.outputDirectory, 'report.md'), fileContent, 'utf8');
+        await writeFile(resolve(this.outputDirectory, `${this.filename}.md`), fileContent, 'utf8');
     }
 }

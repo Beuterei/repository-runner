@@ -105,11 +105,11 @@ void runner({
 
 ## Build in reporters
 
--   `buildInReporters.markdownReporter(outputDirectory: string)` - Writes report markdown files to the configured output directory.
+-   `buildInReporters.markdownReporter(outputDirectory: string, filename = 'report')` - Writes report markdown files to the configured output directory.
 
--   `buildInReporters.jsonReporter(outputDirectory: string)` - Writes report JSON files to the configured output directory.
+-   `buildInReporters.jsonReporter(outputDirectory: string, filename = 'report')` - Writes report JSON files to the configured output directory.
 
-## Interfaces
+## Interfacess
 
 ### RunnerConfig
 
