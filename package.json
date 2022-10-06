@@ -1,7 +1,7 @@
 {
   "name": "@beuluis/repository-runner",
   "version": "0.0.0",
-  "description": "A fun project to run a set of commands on repository and branches",
+  "description": "A task runner for repositories",
   "main": "dist/index.js",
   "bin": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/beuluis/create-helper.git"
+    "url": "git+https://github.com/beuluis/repository-runner.git"
   },
   "bugs": {
-    "url": "https://github.com/beuluis/create-helper/issues"
+    "url": "https://github.com/beuluis/repository-runner/issues"
   },
-  "homepage": "https://github.com/beuluis/create-helper#readme",
+  "homepage": "https://github.com/beuluis/repository-runner#readme",
   "dependencies": {
     "execa": "^5.1.1",
     "liquidjs": "^9.42.0",
