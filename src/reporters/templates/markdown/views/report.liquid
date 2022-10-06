@@ -1,0 +1,30 @@
+# Repository runner report
+{% for repositoryReport in repositoryReports %}{% if repositoryReport.error %}
+## ❌ `{{ repositoryReport.repository }}`
+
+```text
+{{ repositoryReport.error }}
+```
+{% else %}
+## `{{ repositoryReport.repository }}`
+{% for branchReport in repositoryReport.branchReports  %}{% if branchReport.error %}
+## ❌ `{{ branchReport.branch }}`
+
+```text
+{{ branchReport.error }}
+```
+{% else %}
+## `{{ branchReport.branch}}`
+{% for taskReport in branchReport.taskReports  %}{% if taskReport.error %}
+### ❌ `{{ taskReport.taskTitle }}`
+
+```text
+{{ taskReport.error }}
+```
+{% else %}
+### ✅ `{{ taskReport.taskTitle }}`
+{% if taskReport.output %}
+```text
+{{ taskReport.output }}
+```
+{% endif %}{% endif %}{% endfor %}{% endif %}{% endfor %}{% endif %}{% endfor %}
