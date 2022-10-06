@@ -36,7 +36,6 @@ export const runner = async (config: RunnerConfig) => {
                         },
                     }),
                     {
-                        exitOnError: false,
                         rendererOptions: { collapse: false },
                     },
                 ),
