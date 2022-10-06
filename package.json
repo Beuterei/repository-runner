@@ -6,8 +6,7 @@
   "bin": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist",
-    "runner-config-schema.json"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
