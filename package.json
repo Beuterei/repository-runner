@@ -64,5 +64,9 @@
       "prettier --write",
       "eslint"
     ]
+  },
+  "np": {
+    "tests": false,
+    "publish": false
   }
 }
