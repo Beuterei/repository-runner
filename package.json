@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/beuluis/repository-runner#readme",
   "dependencies": {
-    "execa": "^5.1.1",
+    "execa": "^6.0.0",
     "liquidjs": "^9.42.0",
     "listr2": "^5.0.5"
   },
