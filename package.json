@@ -1,6 +1,6 @@
 {
   "name": "@beuluis/repository-runner",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A task runner for repositories",
   "main": "dist/index.js",
   "bin": "dist/index.js",
