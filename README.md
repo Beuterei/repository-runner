@@ -80,6 +80,7 @@ void runner({
         },
         {
             repository: 'testRepo3',
+            prepareTasks: [buildInTasks.commandTask('docker-compose', ['up', '--build', '-d'])],
             tasks: [
                 buildInTasks.installNodeDependenciesTask('yarn'),
                 buildInTasks.commandTask('npm', ['run', 'test:cov']),
@@ -90,6 +91,7 @@ void runner({
                     },
                 },
             ],
+            cleanupTasks: [buildInTasks.commandTask('docker-compose', ['down'])],
         },
     ],
 });
@@ -130,6 +132,10 @@ void runner({
 -   `repository` - Repository name to look up in repositoriesDirectory.
 
 -   `tasks` - List of tasks to run on all matches branches. See [Task](#Task).
+
+-   `prepareTasks` - List of tasks to run after all branch tasks. Run once after all branches in repository. See [Task](#Task).
+
+-   `cleanupTasks` - List of tasks to run before all branch tasks. Run once before all branches in repository. See [Task](#Task).
 
 ### Task
 

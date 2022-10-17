@@ -48,7 +48,7 @@ export const runner = async (config: RunnerConfig) => {
                 task.newListr(listrTasks, {
                     exitOnError: false,
                     concurrent,
-                    rendererOptions: { collapse: false },
+                    rendererOptions: { collapse: false, showTimer: true },
                 }),
         },
         {

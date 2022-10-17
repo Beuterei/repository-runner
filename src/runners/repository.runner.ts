@@ -18,7 +18,7 @@ export const repositoryRunner = async ({
     // Define some scoped variables to be used
     const branchReports: BranchReport[] = [];
     let previousBranch: string;
-    const { tasks, repository, branchRegex } = repositoryTasks;
+    const { tasks, repository, branchRegex, prepareTasks, cleanupTasks } = repositoryTasks;
 
     const repositoryDirectory = resolve(repositoriesDirectory, repository);
     const execaWithCwd = async (command: string, arguments_?: string[]) =>
@@ -82,6 +82,21 @@ export const repositoryRunner = async ({
         throwAndReport('Fetching remote branches failed', error);
     }
 
+    if (prepareTasks) {
+        for (const prepareTask of prepareTasks) {
+            branchListrTasks.push({
+                title: prepareTask.title,
+                task: async () => {
+                    try {
+                        await prepareTask.run(repositoryDirectory);
+                    } catch (error) {
+                        throwAndReport(prepareTask.title, error);
+                    }
+                },
+            });
+        }
+    }
+
     for (const branch of matchedRemoteBranches) {
         branchListrTasks.push({
             title: branch,
@@ -97,6 +112,21 @@ export const repositoryRunner = async ({
                     { rendererOptions: { collapse: false } },
                 ),
         });
+    }
+
+    if (cleanupTasks) {
+        for (const cleanupTask of cleanupTasks) {
+            branchListrTasks.push({
+                title: cleanupTask.title,
+                task: async () => {
+                    try {
+                        await cleanupTask.run(repositoryDirectory);
+                    } catch (error) {
+                        throwAndReport(cleanupTask.title, error);
+                    }
+                },
+            });
+        }
     }
 
     return [
