@@ -27,12 +27,12 @@ export interface RepositoryTasks {
      * List of tasks to run after all branch tasks. Run once after all branches in repository
      */
     // TODO: implement
-    cleanupTasks: NonEmptyArray<Task>;
+    cleanupTasks?: NonEmptyArray<Task>;
     /**
      * List of tasks to run before all branch tasks. Run once before all branches in repository
      */
     // TODO: implement
-    prepareTasks: NonEmptyArray<Task>;
+    prepareTasks?: NonEmptyArray<Task>;
     /**
      * Repository name to look up in repositoriesDirectory.
      */
