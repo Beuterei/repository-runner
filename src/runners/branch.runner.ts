@@ -49,7 +49,7 @@ export const branchRunner = ({
             title: 'Checkout branch',
             task: async () => {
                 try {
-                    await execaWithCwd('git', ['checkout', branch]);
+                    await execaWithCwd('git', ['switch', branch]);
                 } catch (error) {
                     throwAndReport('Checkout failed', error);
                 }
@@ -59,7 +59,7 @@ export const branchRunner = ({
             title: 'Pull latest changes',
             task: async () => {
                 try {
-                    await execaWithCwd('git', ['pull']);
+                    await execaWithCwd('git', ['reset', '--hard', `origin/${branch}`]);
                 } catch (error) {
                     throwAndReport('Pull failed', error);
                 }
@@ -86,6 +86,18 @@ export const branchRunner = ({
                     ],
                     { exitOnError: false, rendererOptions: { collapse: false } },
                 ),
+        },
+        {
+            title: 'Cleanup',
+            task: async () => {
+                try {
+                    // TODO: report if we have artifacts
+                    await execaWithCwd('git', ['reset', '--hard']);
+                    await execaWithCwd('git', ['clean', '--force']);
+                } catch (error) {
+                    throwAndReport('Cleanup failed', error);
+                }
+            },
         },
         {
             task: () =>
