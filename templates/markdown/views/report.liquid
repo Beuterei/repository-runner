@@ -8,23 +8,25 @@
 {% else %}
 ## `{{ repositoryReport.repository }}`
 {% for branchReport in repositoryReport.branchReports  %}{% if branchReport.error %}
-## ❌ `{{ branchReport.branch }}`
+### ❌ `{{ branchReport.branch }}`
 
 ```text
 {{ branchReport.error }}
 ```
-{% else %}
-## `{{ branchReport.branch}}`
+{% else %}{% if branchReport.taskReports and branchReport.taskReports.size != 0 %}
+### `{{ branchReport.branch}}`
 {% for taskReport in branchReport.taskReports  %}{% if taskReport.error %}
-### ❌ `{{ taskReport.taskTitle }}`
+#### ❌ `{{ taskReport.taskTitle }}`
 
 ```text
 {{ taskReport.error }}
 ```
 {% else %}
-### ✅ `{{ taskReport.taskTitle }}`
+#### ✅ `{{ taskReport.taskTitle }}`
 {% if taskReport.output %}
 ```text
 {{ taskReport.output }}
 ```
-{% endif %}{% endif %}{% endfor %}{% endif %}{% endfor %}{% endif %}{% endfor %}
+{% endif %}{% endif %}{% endfor %}{% else %}
+### ✅ `{{ branchReport.branch}}`
+{% endif %}{% endif %}{% endfor %}{% endif %}{% endfor %}
