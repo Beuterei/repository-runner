@@ -239,12 +239,6 @@ After all reports are collected they get passed to the configured [reporters](#R
 
 -   [ ] rework runner structure. I really had a hard time to structure this and I am not totally happy. My first goal now was to provide a MVP and learn from using it.
 
-<!-- CONTRIBUTING -->
-
-## Contributing
-
-Follow [contributing](https://github.com/Good-Games-Munich/.github/wiki/workflows#contributing).
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
