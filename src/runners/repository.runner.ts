@@ -1,9 +1,9 @@
-import { existsSync, lstatSync } from 'fs';
-import { resolve } from 'path';
-import execa from 'execa';
-import type { ListrTask } from 'listr2';
 import type { BranchReport, RepositoryReport, RepositoryTasks } from '../shared/repositoryRunner';
 import { branchRunner } from './branch.runner';
+import execa from 'execa';
+import { existsSync, lstatSync } from 'fs';
+import type { ListrTask } from 'listr2';
+import { resolve } from 'path';
 
 interface RepositoryRunnerArguments {
     pushRepositoryReport: (repositoryReport: RepositoryReport) => void;

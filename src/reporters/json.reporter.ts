@@ -1,16 +1,16 @@
+import type { Reporter, RepositoryReport } from '../shared/repositoryRunner';
 import { writeFileSync } from 'fs';
 import { resolve } from 'path';
-import type { Reporter, RepositoryReport } from '../shared/repositoryRunner';
 
 export class JSONReporter implements Reporter {
-    private readonly outputDirectory: string;
-
-    private readonly filename: string;
-
     public constructor(outputDirectory: string, filename = 'report') {
         this.outputDirectory = outputDirectory;
         this.filename = filename;
     }
+
+    private readonly filename: string;
+
+    private readonly outputDirectory: string;
 
     public async report(repositoryReports: RepositoryReport[]): Promise<void> {
         writeFileSync(

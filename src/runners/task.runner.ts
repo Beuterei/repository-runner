@@ -1,6 +1,6 @@
-import { resolve } from 'path';
-import type { ListrTask } from 'listr2';
 import type { Task, TaskReport } from '../shared/repositoryRunner';
+import type { ListrTask } from 'listr2';
+import { resolve } from 'path';
 
 interface TaskRunnerArguments {
     pushTaskReport: (taskReport: TaskReport) => void;

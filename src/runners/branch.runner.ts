@@ -1,8 +1,8 @@
-import { resolve } from 'path';
-import execa from 'execa';
-import type { ListrTask } from 'listr2';
 import type { BranchReport, Task, TaskReport } from '../shared/repositoryRunner';
 import { taskRunner } from './task.runner';
+import execa from 'execa';
+import type { ListrTask } from 'listr2';
+import { resolve } from 'path';
 
 interface BranchRunnerArguments {
     branch: string;

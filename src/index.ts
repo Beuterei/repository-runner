@@ -1,7 +1,7 @@
-import type { ListrTask } from 'listr2';
-import { Listr } from 'listr2';
 import { repositoryRunner } from './runners/repository.runner';
 import type { RepositoryReport, RunnerConfig } from './shared/repositoryRunner';
+import type { ListrTask } from 'listr2';
+import { Listr } from 'listr2';
 
 export const runner = async (config: RunnerConfig) => {
     const repositoryReports: RepositoryReport[] = [];
@@ -66,8 +66,6 @@ export const runner = async (config: RunnerConfig) => {
     ]).run();
 };
 
-export { buildInTasks } from './tasks';
-
 export { buildInReporters } from './reporters';
-
 export * from './shared/repositoryRunner';
+export { buildInTasks } from './tasks';

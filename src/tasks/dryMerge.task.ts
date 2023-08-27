@@ -1,11 +1,7 @@
-import execa from 'execa';
 import type { Task } from '../shared/repositoryRunner';
+import execa from 'execa';
 
 export class DryMergeTask implements Task {
-    public readonly title: string;
-
-    private readonly targetBranch: string;
-
     public constructor(targetBranch = 'main') {
         this.title = `Dry merge to target branch: ${targetBranch}`;
         this.targetBranch = targetBranch;
@@ -19,4 +15,8 @@ export class DryMergeTask implements Task {
 
         return undefined;
     }
+
+    private readonly targetBranch: string;
+
+    public readonly title: string;
 }

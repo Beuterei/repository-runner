@@ -1,14 +1,12 @@
-import execa from 'execa';
 import type { Task } from '../shared/repositoryRunner';
+import execa from 'execa';
 
 export class InstallNodeDependenciesTask implements Task {
-    public readonly title = 'Install node dependencies';
-
-    private readonly packageManager: 'npm' | 'yarn';
-
     public constructor(packageManager: 'npm' | 'yarn' = 'npm') {
         this.packageManager = packageManager;
     }
+
+    private readonly packageManager: 'npm' | 'yarn';
 
     public async run(repositoriesDirectory: string): Promise<undefined> {
         // Decide on the package manager what command to use
@@ -27,4 +25,6 @@ export class InstallNodeDependenciesTask implements Task {
 
         return undefined;
     }
+
+    public readonly title = 'Install node dependencies';
 }
