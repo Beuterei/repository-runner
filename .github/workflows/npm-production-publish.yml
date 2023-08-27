@@ -9,7 +9,7 @@ jobs:
   testing:
     uses: Beuterei/reusable-workflows/.github/workflows/node-qa-testing.yml@main
     with:
-      skip_coverage_report: true
+      run_jest_coverage: false
     secrets: inherit
 
   publish-npm:

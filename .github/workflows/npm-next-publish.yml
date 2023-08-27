@@ -11,6 +11,8 @@ jobs:
     permissions:
       contents: write
     uses: Beuterei/reusable-workflows/.github/workflows/node-qa-testing.yml@main
+    with:
+      run_jest_coverage: false
     secrets: inherit
 
   publish-npm:
