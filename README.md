@@ -231,14 +231,6 @@ The report order goes as follows:
 
 After all reports are collected they get passed to the configured [reporters](#Reporter). These reporters can do whatever they want with the reports. They can write them to files, pass them to an API, or trigger scripts, whatever their heart desires.
 
-## TODO
-
--   [ ] write somewhat of tests
-
--   [ ] rework report system
-
--   [ ] rework runner structure. I really had a hard time to structure this and I am not totally happy. My first goal now was to provide a MVP and learn from using it.
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
